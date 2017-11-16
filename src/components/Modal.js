@@ -37,6 +37,29 @@ export default class Modals extends Component {
             }
             this.props.handleSubmit(e, obj)
         }
+        if (this.props.content === 'signin') {
+            let obj = {
+                Username: this.state.Username,
+                Password: this.state.Password
+            }
+            this.props.handleSubmit(e, obj)
+        }
+        if (this.props.content === 'create') {
+            let obj = {
+                Habit: this.state.Habit,
+                Goal: this.state.Goal
+            }
+            this.props.handleSubmit(e, obj)
+        }
+        this.setState({
+            Name: '',
+            Email: '',
+            Username: '',
+            Password: '',
+            Habit: '',
+            Inspiration: '',
+            Goal: null
+        })
     }
 
     onInputChange(states, input) {
@@ -57,10 +80,14 @@ export default class Modals extends Component {
                         </ModalHeader>
                         <ModalBody>
                             <Input
+                                display={this.state.Username}
+                                onInputChange={this.onInputChange}
                                 type='text'
                                 placeholder='Username'
                             />
                             <Input
+                                display={this.state.Password}
+                                onInputChange={this.onInputChange}
                                 type='password'
                                 placeholder="Password"
                             />
@@ -80,25 +107,25 @@ export default class Modals extends Component {
                         </ModalHeader>
                         <ModalBody>
                             <Input
-                                display={this.state.display}
+                                display={this.state.Name}
                                 onInputChange={this.onInputChange}
                                 type='text'
                                 placeholder="Name"
                             />
                             <Input
-                                display={this.state.display}
+                                display={this.state.Email}
                                 onInputChange={this.onInputChange}
                                 type='email'
                                 placeholder='Email'
                             />
                             <Input
-                                display={this.state.display}
+                                display={this.state.Username}
                                 onInputChange={this.onInputChange}
                                 type='text'
                                 placeholder='Username'
                             />
                             <Input
-                                display={this.state.display}
+                                display={this.state.Password}
                                 onInputChange={this.onInputChange}
                                 type='password'
                                 placeholder="Password"
@@ -118,15 +145,28 @@ export default class Modals extends Component {
                             <img className='brand brandModal big-x' src='./style/image/brand.png' />
                         </ModalHeader>
                         <ModalBody>
+                            {/* <div class="input-field col s12">
+                                <select>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </select>
+                                <label>Materialize Select</label>
+                            </div>
                             <Input
                                 type='dropdown'
                                 placeholder='Inspiration'
-                            />
+                            /> */}
                             <Input
+                                display={this.state.Habit}
+                                onInputChange={this.onInputChange}
                                 type='text'
                                 placeholder='Habit'
                             />
                             <Input
+                                display={this.state.Goal}
+                                onInputChange={this.onInputChange}
                                 type='number'
                                 placeholder="Goal"
                             />

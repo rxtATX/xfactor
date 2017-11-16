@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import Signin from './Signin.js';
 import Signup from './Signup.js';
-import Calendar1 from './Calendar1';
-import Calendar2 from './Calendar2';
-import Calendar3 from './Calendar3';
-import Calendar4 from './Calendar4';
 
 export default class Nav extends Component {
     constructor(props) {
@@ -20,41 +16,17 @@ export default class Nav extends Component {
         const navDisplay = () => {
             if (this.props.route === 'index') {
                 return (
-                    <div>
-                        <ul id="nav-mobile" className="right hide-on-med-and-down">
-                            <li><a onClick={(e, content) => this.handleClick(e, 'signup')}>Sign Up</a></li>
-                            <li><a onClick={(e, content) => this.handleClick(e, 'signin')}>Sign In</a></li>
-                            <li><a onClick={(e) => this.handleClick(e)}>X-Factor Theory</a></li>
-                        </ul>
-                        <ul className="right side-nav" id="mobile-demo">
-                            <li><a onClick={(e, content) => this.handleClick(e, 'signup')}>Sign Up</a></li>
-                            <li><a onClick={(e, content) => this.handleClick(e, 'signin')}>Sign In</a></li>
-                            <li><a onClick={(e) => this.handleClick(e)}>X-Factor Theory</a></li>
-                        </ul>
-                    </div>
-                )
-            } else if (this.props.route === 'dashboard') {
-                return (
-                    <div>
-                        <ul id="nav-mobile" className="right hide-on-med-and-down">
-                            <li><a disabled className="disabled">Welcome, {localStorage.getItem("Name")}</a></li>
-                            <li><a onClick={(e, content) => this.handleClick(e, 'create')}>Create</a></li>
-                            <li><a onClick={() => this.props.logOut()}>Sign Out</a></li>
-                        </ul>
-                        <ul className="right side-nav" id="mobile-demo">
-                            <li><a disabled className="disabled">Welcome, {localStorage.getItem("Name")}</a></li>
-                            <li><a onClick={(e, content) => this.handleClick(e, 'create')}>Create</a></li>
-                            <li><a onClick={() => this.props.logOut()}>Sign Out</a></li>
-                        </ul>
-                    </div>
-                )
-            }
-        }
-        return (
-            <div>
-                <nav className="nav-extended row">
                     <div className="nav-wrapper col s12">
-                        {navDisplay()}
+                        <ul id="nav-mobile" className="right hide-on-med-and-down">
+                            <li><a onClick={(e, content) => this.handleClick(e, 'signup')}>Sign Up</a></li>
+                            <li><a onClick={(e, content) => this.handleClick(e, 'signin')}>Sign In</a></li>
+                            <li><a onClick={(e) => this.handleClick(e)}>X-Factor Theory</a></li>
+                        </ul>
+                        <ul className="right side-nav" id="mobile-demo">
+                            <li><a onClick={(e, content) => this.handleClick(e, 'signup')}>Sign Up</a></li>
+                            <li><a onClick={(e, content) => this.handleClick(e, 'signin')}>Sign In</a></li>
+                            <li><a onClick={(e) => this.handleClick(e)}>X-Factor Theory</a></li>
+                        </ul>
                         <div className="row">
                             <div className="brand-row col s9 offset-s3">
                                 <span>
@@ -78,8 +50,29 @@ export default class Nav extends Component {
                             </div>
                         </div>
                     </div>
-                </nav>
-            </div>
+                )
+            } else if (this.props.route === 'dashboard') {
+                return (
+                    <div className="nav-wrapper col s12">
+                        <img id="secondNavImg" className='brand big-x brand-logo' src='./style/image/brand.png' />
+                        <ul id="nav-mobile" className="right hide-on-med-and-down">
+                            <li><a disabled className="disabled">Welcome, {localStorage.getItem("Name")}</a></li>
+                            <li><a onClick={(e, content) => this.handleClick(e, 'create')}>Create</a></li>
+                            <li><a onClick={() => this.props.logOut()}>Sign Out</a></li>
+                        </ul>
+                        <ul className="right side-nav" id="mobile-demo">
+                            <li><a disabled className="disabled">Welcome, {localStorage.getItem("Name")}</a></li>
+                            <li><a onClick={(e, content) => this.handleClick(e, 'create')}>Create</a></li>
+                            <li><a onClick={() => this.props.logOut()}>Sign Out</a></li>
+                        </ul>
+                    </div>
+                )
+            }
+        }
+        return (
+            <nav id={this.props.navID} className="nav-extended row">
+                {navDisplay()}
+            </nav>
         )
     }
 }

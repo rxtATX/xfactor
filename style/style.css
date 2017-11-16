@@ -52,14 +52,14 @@ content>section p {
     font-size: 1.75rem;
 }
 
-nav h3 {
+nav .offset-s3 h3 {
     position: relative;
     bottom: 10vh;
 }
 
-nav, #nav2 {
+nav {
     display: flex;
-    background-color: #514f51;
+    background-color: #514f51 !important;
     box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.5);
 }
 
@@ -68,21 +68,29 @@ nav, #nav2 {
 }
 
 #nav2 {
-    height: 5vh !important;
+    height: 16vh !important;
 }
 
-.secondNav {
-    margin-bottom: -2vh;
-    margin-top: 16vh;
-    height: 4vh !important;
-    background-color: transparent;
-    box-shadow: unset;
+#calsTab {
+    margin-top: 8vh;
+}
+
+#calsTab > div {
+    height: 74vh;
+    padding: 0 .25vw;
+    background-color: white;
 }
 
 footer {
     box-shadow: 0px -2px 4px 2px rgba(0,0,0,0.5);  
     height: 10vh;
     background-color: #514f51;
+}
+
+#secondNavImg {
+    transform: scale(.35);
+    margin-top: -6.2vh;
+    margin-left: -9.5vw;
 }
 
 .nav2 {
@@ -92,7 +100,7 @@ footer {
     width: 100vw;
 }
 
-footer div {
+footer div, section {
     margin-bottom: 0 !important;
 }
 
@@ -102,16 +110,16 @@ footer img {
     width: 15vw !important;
 }
 
-.nav-content {
+#nav .nav-content {
     margin-top: 20vh;
     margin-left: -5vw;
 } 
 
-.nav-content h3 {
+#nav .nav-content h3 {
     margin-top: 10vh;
 }
 
-.nav-wrapper > .row {
+#nav .nav-wrapper > .row {
     margin-left: 6vw;
     margin-top: 22vh;
 }
@@ -131,6 +139,7 @@ footer img {
 }
 
 .theory {
+    margin-top: 16vh;
     text-align: justify;
 }
 
@@ -141,7 +150,7 @@ footer img {
 
 .theory>.row>h1 {
     margin-left: -4vw !important;
-    padding-top: 8vh;
+    padding-top: 6vh;
 }
 
 .blue-x {
@@ -178,4 +187,8 @@ input[type=text]:not(.browser-default):hover:not([readonly]) {
 
 #toTop {
     transform: scale(.75);
+}
+
+.rbc-calendar {
+    height: 69vh !important;
 }
